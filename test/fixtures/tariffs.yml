@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ano: 2021-05-21
+  grupo: MyString
+  subgrupo: 1
+  modalidade: MyString
+  subclasse: MyString
+  posto: MyString
+  tusd_k: 1.5
+  tusd_m: 1.5
+  te: 1.5
+
+two:
+  ano: 2021-05-21
+  grupo: MyString
+  subgrupo: 1
+  modalidade: MyString
+  subclasse: MyString
+  posto: MyString
+  tusd_k: 1.5
+  tusd_m: 1.5
+  te: 1.5

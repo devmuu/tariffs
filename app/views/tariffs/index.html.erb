@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Base de Tarifas</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr class="bg-dark text-light">
+      <th>Ano</th>
+      <th>Grupo</th>
+      <th>Subgrupo</th>
+      <th>Modalidade</th>
+      <th>Subclasse</th>
+      <th>Posto</th>
+      <th>TUSD [R$/kW]</th>
+      <th>TUSD [R$/MWh]</th>
+      <th>TE [R$/MWh]</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tariffs.each do |tariff| %>
+      <% if tariff.modalidade == "azul" %>
+         <% bg = "text-primary" %>
+      <% elsif tariff.modalidade == "verde" %>
+         <% bg = "text-success" %>
+      <% elsif tariff.modalidade == "branca" %>
+        <% bg = "text-dark" %>
+      <% else %>
+        <% bg = "table-warning" %>
+      <% end %>
+      <tr class="table-light">
+        <td><%= tariff.ano %></td>
+        <td><%= tariff.grupo %></td>
+        <td><%= tariff.subgrupo %></td>
+        <td class="<%= bg %>"><%= tariff.modalidade.capitalize %></td>
+        <td><%= tariff.subclasse.upcase %></td>
+        <td><%= tariff.posto %></td>
+        <td><%= tariff.tusd_k %></td>
+        <td><%= tariff.tusd_m %></td>
+        <td><%= tariff.te %></td>
+        <td><%= link_to 'Show', tariff %></td>
+        <td><%= link_to 'Edit', edit_tariff_path(tariff) %></td>
+        <td><%= link_to 'Destroy', tariff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tariff', new_tariff_path %>

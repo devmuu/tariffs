@@ -1,0 +1,62 @@
+<%= form_with(model: tariff) do |form| %>
+  <% if tariff.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tariff.errors.count, "error") %> prohibited this tariff from being saved:</h2>
+
+      <ul>
+        <% tariff.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :ano %>
+    <%= form.date_select :ano %>
+  </div>
+
+  <div class="field">
+    <%= form.label :grupo %>
+    <%= form.text_field :grupo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subgrupo %>
+    <%= form.number_field :subgrupo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :modalidade %>
+    <%= form.text_field :modalidade %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subclasse %>
+    <%= form.text_field :subclasse %>
+  </div>
+
+  <div class="field">
+    <%= form.label :posto %>
+    <%= form.text_field :posto %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tusd_k %>
+    <%= form.text_field :tusd_k %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tusd_m %>
+    <%= form.text_field :tusd_m %>
+  </div>
+
+  <div class="field">
+    <%= form.label :te %>
+    <%= form.text_field :te %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
