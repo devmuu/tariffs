@@ -305,3 +305,159 @@ tariffs = Tariff.create([
         "te": 257.20
     }
 ])
+
+rates = Rate.create([
+			{
+                "ano": 2020,
+				"mes": 1,
+				"ref": 2019,
+				"bandeira": "amarela",
+				"pis": 2.19,
+				"icms": 27,
+				"calc": 1
+			},
+			{
+                "ano": 2020,
+				"mes": 2,
+				"ref": 2019,
+				"bandeira": "verde",
+				"pis": 6.73,
+				"icms": 27,
+				"calc": 1
+			},
+			{
+                "ano": 2020,
+				"mes": 3,
+				"ref": 2019,
+				"bandeira": "verde",
+				"pis": 6.46,
+				"icms": 27,
+				"calc": 1
+			},
+			{
+                "ano": 2020,
+				"mes": 4,
+				"ref": 2019,
+				"bandeira": "verde",
+				"pis": 0,
+				"icms": 27,
+				"calc": 1
+			},
+			{
+                "ano": 2020,
+				"mes": 5,
+				"ref": 2019,
+				"bandeira": "verde",
+				"pis": 4.30,
+				"icms": 27,
+				"calc": 1
+			},
+			{
+                "ano": 2020,
+				"mes": 6,
+				"ref": 2019,
+				"bandeira": "verde",
+				"pis": 5.51,
+				"icms": 27,
+				"calc": 1
+			},
+			{
+                "ano": 2020,
+				"mes": 7,
+				"ref": 2020,
+				"bandeira": "verde",
+				"pis": 1.93,
+				"icms": 27,
+				"calc": 2
+			},
+			{
+                "ano": 2020,
+				"mes": 8,
+				"ref": 2020,
+				"bandeira": "verde",
+				"pis": 2.90,
+				"icms": 27,
+				"calc": 2
+			},
+			{
+                "ano": 2020,
+				"mes": 9,
+				"ref": 2020,
+				"bandeira": "verde",
+				"pis": 0.82,
+				"icms": 27,
+				"calc": 2
+			},
+			{
+                "ano": 2020,
+				"mes": 10,
+				"ref": 2020,
+				"bandeira": "verde",
+				"pis": 3.84,
+				"icms": 27,
+				"calc": 2
+			},
+			{
+                "ano": 2020,
+				"mes": 11,
+				"ref": 2020,
+				"bandeira": "verde",
+				"pis": 5.67,
+				"icms": 27,
+				"calc": 2
+			},
+			{
+                "ano": 2020,
+				"mes": 12,
+				"ref": 2020,
+				"bandeira": "verde",
+				"pis": 2.55,
+				"icms": 27,
+				"calc": 1
+			},
+			{
+                "ano": 2021,
+				"mes": 1,
+				"ref": 2020,
+				"bandeira": "amarela",
+				"pis": 3.67,
+				"icms": 27,
+				"calc": 3
+			},
+			{
+                "ano": 2021,
+				"mes": 2,
+				"ref": 2020,
+				"bandeira": "amarela",
+				"pis": 4.46,
+				"icms": 27,
+				"calc": 3
+			},
+			{
+                "ano": 2021,
+				"mes": 3,
+				"ref": 2020,
+				"bandeira": "amarela",
+				"pis": 2.23,
+				"icms": 27,
+				"calc": 3
+			},
+			{
+                "ano": 2021,
+				"mes": 4,
+				"ref": 2021,
+				"bandeira": "amarela",
+				"pis": 5.54,
+				"icms": 27,
+				"calc": 3
+			},
+			{
+                "ano": 2021,
+				"mes": 5,
+				"ref": 2021,
+				"bandeira": "vermelha p1",
+				"pis": 5.98,
+				"icms": 27,
+				"calc": 3
+			}
+		])

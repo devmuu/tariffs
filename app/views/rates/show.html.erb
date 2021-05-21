@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ano:</strong>
+  <%= @rate.ano %>
+</p>
+
+<p>
+  <strong>Mes:</strong>
+  <%= @rate.mes %>
+</p>
+
+<p>
+  <strong>Ref:</strong>
+  <%= @rate.ref %>
+</p>
+
+<p>
+  <strong>Bandeira:</strong>
+  <%= @rate.bandeira %>
+</p>
+
+<p>
+  <strong>Pis:</strong>
+  <%= @rate.pis %>
+</p>
+
+<p>
+  <strong>Icms:</strong>
+  <%= @rate.icms %>
+</p>
+
+<p>
+  <strong>Calc:</strong>
+  <%= @rate.calc %>
+</p>
+
+<%= link_to 'Edit', edit_rate_path(@rate) %> |
+<%= link_to 'Back', rates_path %>

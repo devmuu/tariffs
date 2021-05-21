@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_21_224340) do
+ActiveRecord::Schema.define(version: 2021_05_21_232407) do
+
+  create_table "rates", force: :cascade do |t|
+    t.date "ano"
+    t.integer "mes"
+    t.date "ref"
+    t.string "bandeira"
+    t.float "pis"
+    t.float "icms"
+    t.integer "calc"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "tariffs", force: :cascade do |t|
     t.date "ano"

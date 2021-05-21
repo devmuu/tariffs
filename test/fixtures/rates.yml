@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ano: 2021-05-21
+  mes: 1
+  ref: 2021-05-21
+  bandeira: MyString
+  pis: 1.5
+  icms: 1.5
+  calc: 1
+
+two:
+  ano: 2021-05-21
+  mes: 1
+  ref: 2021-05-21
+  bandeira: MyString
+  pis: 1.5
+  icms: 1.5
+  calc: 1
