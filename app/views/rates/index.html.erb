@@ -32,9 +32,9 @@
         <% bg = "table-warning" %>
       <% end %>
       <tr>
-        <td><%= rate.ano %></td>
+        <td><%= rate.ano.year %></td>
         <td><%= rate.mes %></td>
-        <td>ANNEL/<%= rate.ref %></td>
+        <td>ANNEL/<%= rate.ref.year %></td>
         <td class="<%= bg %>"><%= rate.bandeira.upcase %></td>
         <td><%= flag %></td>
         <td><%= rate.pis %></td>
