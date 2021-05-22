@@ -1,0 +1,117 @@
+<p id="notice"><%= notice %></p>
+
+<% months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'] %>
+
+<h1 class="text-light">Tarifas</h1>
+
+<input class="form-control me-2" type="search" placeholder="Filtrar [ex: verde]" aria-label="Search" id="searchTerm" onkeyup="doSearch()">
+<table id="dataTable" class="table table-hover table-striped bg-light mt-3 mb-5">
+  <thead>
+    <tr class="bg-dark text-light">
+      <th>Ano</th>
+      <th>Grupo</th>
+      <th>Modalidade</th>
+      <th>Mês</th>
+      <th>Acréscimo [R$]</th>
+      <th>PIS [%]</th>
+      <th>ICMS [%]</th>
+      <th>Posto</th>
+      <th class="text-center">Demanda [R$/kW]</th>
+      <th class="text-center">Consumo [R$/kWh]</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rates.each do |rate| %>
+      <% @tariffs.each do |tariff| %>
+        <% if rate.ref == tariff.ano %>
+          <% if tariff.modalidade == "azul" %>
+            <% bg = "text-primary" %>
+          <% elsif tariff.modalidade == "verde" %>
+            <% bg = "text-success" %>
+          <% elsif tariff.modalidade == "branca" %>
+            <% bg = "text-dark" %>
+          <% elsif tariff.modalidade == "convencional" %>
+            <% bg = "text-warning" %>
+          <% else %>
+            <% bg = "table-warning" %>
+          <% end %>
+          <% if rate.bandeira == "verde" %>
+            <% flag = 0.00 %>
+          <% elsif rate.bandeira == "amarela" %>
+            <% flag = 0.01343 %>
+          <% elsif rate.bandeira == "vermelha p1" %>
+            <% flag = 0.04169 %>
+          <% else %>
+            <% flag = 0.06243 %>
+          <% end %>
+          <% num = (tariff.tusd_m + tariff.te)/1000 + flag %>
+          <% aux = (tariff.tusd_k) %>
+          <% if rate.calc == 1 %>
+            <% fix = (1-rate.pis/100-rate.icms/100) %>
+            <% dem = aux/fix %>
+            <% cons = num/fix %>
+          <% elsif rate.calc == 2 %>
+            <% fix = (1+rate.pis/100+rate.icms/100) %>
+            <% dem = aux*fix %>
+            <% cons = num*fix %>
+          <% elsif rate.calc == 3 %>
+            <% fix = (1-rate.pis/100)*(1-rate.icms/100) %>
+            <% dem = aux/fix %>
+            <% cons = num/fix %>
+          <% else %>
+            <% dem = 0 %>
+            <% cons = 0 %>
+          <% end %>
+          <tr>
+            <td><%= rate.ano %></td>
+            <td><%= tariff.grupo %></td>
+            <td class="<%= bg %>"><%= tariff.modalidade.upcase %></td>
+            <td><%= months[rate.mes-1].upcase %></td>
+            <td><%= flag %></td>
+            <td><%= rate.pis %></td>
+            <td><%= rate.icms %></td>
+            <td><%= tariff.posto %></td>
+            <% if dem == 0.00 %>
+              <td class="text-center">-</td>
+            <% else %>
+              <td class="text-center"><%= dem.round(2) %></td>
+            <% end %>
+            <% flag_var = (tariff.modalidade == "verde" and tariff.posto == "NA" ) %>
+            <% if cons == 0.00 or flag_var %>
+              <td class="text-center">-</td>
+            <% else %>
+              <td class="text-center"><%= cons.round(5) %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<script>
+function doSearch() {
+  var input, filter, found, table, tr, td, i, j;
+  input = document.getElementById("searchTerm");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("dataTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td");
+    for (j = 0; j < td.length; j++) {
+      if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+        found = true;
+      }
+    }
+    if (found) {
+      tr[i].style.display = "";
+      found = false;
+    } else {
+      tr[i].style.display = "none";
+    }
+  }
+}
+</script>

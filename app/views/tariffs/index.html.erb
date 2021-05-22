@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Base de Tarifas</h1>
+<h3 class="text-light">Base de Tarifas</h3>
 
-<table class="table table-hover">
+<table class="table table-hover bg-light mt-5 mb-5">
   <thead>
     <tr class="bg-dark text-light">
       <th class="text-center">Ano Referência</th>
@@ -14,7 +14,6 @@
       <th>TUSD [R$/kW]</th>
       <th>TUSD [R$/MWh]</th>
       <th>TE [R$/MWh]</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -39,14 +38,9 @@
         <td class="text-center"><%= tariff.tusd_k %></td>
         <td class="text-center"><%= tariff.tusd_m %></td>
         <td class="text-center"><%= tariff.te %></td>
-        <td><%= link_to 'Show', tariff %></td>
-        <td><%= link_to 'Edit', edit_tariff_path(tariff) %></td>
-        <td><%= link_to 'Destroy', tariff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Tariff', new_tariff_path %>
