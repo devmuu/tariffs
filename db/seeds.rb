@@ -8,7 +8,7 @@
 
 tariffs = Tariff.create([
     {
-        "ano": dDateTime.new(2019),
+        "ano": DateTime.new(2019),
         "grupo": "A",
         "subgrupo": 3,
         "modalidade": "azul",
@@ -19,7 +19,7 @@ tariffs = Tariff.create([
         "te": 404.72
     },
     {
-        "ano": dDateTime.new(2019),
+        "ano": DateTime.new(2019),
         "grupo": "A",
         "subgrupo": 3,
         "modalidade": "azul",
@@ -30,7 +30,7 @@ tariffs = Tariff.create([
         "te": 242.34
     },
     {
-        "ano": dDateTime.new(2019),
+        "ano": DateTime.new(2019),
         "grupo": "A",
         "subgrupo": 3,
         "modalidade": "verde",
@@ -41,7 +41,7 @@ tariffs = Tariff.create([
         "te": 0.00
     },
     {
-        "ano": dDateTime.new(2019),
+        "ano": DateTime.new(2019),
         "grupo": "A",
         "subgrupo": 3,
         "modalidade": "verde",
@@ -52,7 +52,7 @@ tariffs = Tariff.create([
         "te": 404.72
     },
     {
-        "ano": dDateTime.new(2019),
+        "ano": DateTime.new(2019),
         "grupo": "A",
         "subgrupo": 3,
         "modalidade": "verde",
@@ -63,7 +63,7 @@ tariffs = Tariff.create([
         "te": 242.34
     },
     {
-        "ano": dDateTime.new(2019),
+        "ano": DateTime.new(2019),
         "grupo": "B",
         "subgrupo": 4,
         "modalidade": "branca",
@@ -74,7 +74,7 @@ tariffs = Tariff.create([
         "te": 404.72
     },
     {
-        "ano": dDateTime.new(2019),
+        "ano": DateTime.new(2019),
         "grupo": "B",
         "subgrupo": 4,
         "modalidade": "branca",
@@ -85,7 +85,7 @@ tariffs = Tariff.create([
         "te": 242.34
     },
     {
-        "ano": dDateTime.new(2019),
+        "ano": DateTime.new(2019),
         "grupo": "B",
         "subgrupo": 4,
         "modalidade": "branca",
@@ -96,7 +96,7 @@ tariffs = Tariff.create([
         "te": 242.34
     },
     {
-        "ano": dDateTime.new(2019),
+        "ano": DateTime.new(2019),
         "grupo": "B",
         "subgrupo": 4,
         "modalidade": "convencional",
@@ -310,7 +310,7 @@ rates = Rate.create([
 			{
                 "ano": DateTime.new(2020),
 				"mes": 1,
-				"ref": dDateTime.new(2019),
+				"ref": DateTime.new(2019),
 				"bandeira": "amarela",
 				"pis": 2.19,
 				"icms": 27,
@@ -319,7 +319,7 @@ rates = Rate.create([
 			{
                 "ano": DateTime.new(2020),
 				"mes": 2,
-				"ref": dDateTime.new(2019),
+				"ref": DateTime.new(2019),
 				"bandeira": "verde",
 				"pis": 6.73,
 				"icms": 27,
@@ -328,7 +328,7 @@ rates = Rate.create([
 			{
                 "ano": DateTime.new(2020),
 				"mes": 3,
-				"ref": dDateTime.new(2019),
+				"ref": DateTime.new(2019),
 				"bandeira": "verde",
 				"pis": 6.46,
 				"icms": 27,
@@ -337,7 +337,7 @@ rates = Rate.create([
 			{
                 "ano": DateTime.new(2020),
 				"mes": 4,
-				"ref": dDateTime.new(2019),
+				"ref": DateTime.new(2019),
 				"bandeira": "verde",
 				"pis": 0,
 				"icms": 27,
@@ -346,7 +346,7 @@ rates = Rate.create([
 			{
                 "ano": DateTime.new(2020),
 				"mes": 5,
-				"ref": dDateTime.new(2019),
+				"ref": DateTime.new(2019),
 				"bandeira": "verde",
 				"pis": 4.30,
 				"icms": 27,
@@ -355,7 +355,7 @@ rates = Rate.create([
 			{
                 "ano": DateTime.new(2020),
 				"mes": 6,
-				"ref": dDateTime.new(2019),
+				"ref": DateTime.new(2019),
 				"bandeira": "verde",
 				"pis": 5.51,
 				"icms": 27,
