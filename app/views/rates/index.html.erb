@@ -17,21 +17,8 @@
 
   <tbody>
     <% @rates.each do |rate| %>
-      <% if rate.bandeira == "verde" %>
-         <% bg = "text-success" %>
-         <% flag = 0.00 %>
-      <% elsif rate.bandeira == "amarela" %>
-         <% bg = "text-warning" %>
-         <% flag = 0.01343 %>
-      <% elsif rate.bandeira == "vermelha p1" %>
-        <% bg = "text-danger" %>
-        <% flag = 0.04169 %>
-      <% elsif rate.bandeira == "vermelha p2" %>
-        <% bg = "text-danger" %>
-        <% flag = 0.06243 %>
-      <% else %>
-        <% bg = "table-warning" %>
-      <% end %>
+      <% flag = flag_value(rate)[:flag] %>
+      <% bg = flag_value(rate)[:bg] %>
       <tr>
         <td><%= rate.ano.year %></td>
         <td><%= rate.mes %></td>

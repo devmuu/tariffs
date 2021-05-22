@@ -20,15 +20,7 @@
 
   <tbody>
     <% @tariffs.each do |tariff| %>
-      <% if tariff.modalidade == "azul" %>
-         <% bg = "text-primary" %>
-      <% elsif tariff.modalidade == "verde" %>
-         <% bg = "text-success" %>
-      <% elsif tariff.modalidade == "branca" %>
-        <% bg = "text-dark" %>
-      <% else %>
-        <% bg = "table-warning" %>
-      <% end %>
+      <% bg = mod_color(tariff) %>
       <tr class="table-light">
         <td class="text-center"><%= tariff.ano.year %></td>
         <td class="text-center"><%= tariff.grupo %></td>
