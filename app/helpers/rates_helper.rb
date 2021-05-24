@@ -3,7 +3,7 @@ module RatesHelper
     def flag_value rate
         if rate.bandeira == "verde"
             flag = 0.00
-            bg = "text-success" 
+            bg = "text-success"
         elsif rate.bandeira == "amarela"
             flag = 0.01343
             bg = "text-warning"

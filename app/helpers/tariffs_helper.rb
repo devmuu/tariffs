@@ -8,7 +8,7 @@ module TariffsHelper
         elsif tariff.modalidade == "branca"
             bg = "text-dark"
         else
-            bg = "table-warning"
+            bg = "text-warning"
         end
         
         return bg

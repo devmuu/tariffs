@@ -21,12 +21,20 @@ module ApplicationHelper
             cons = 0
         end
 
+        if tariff.tusd_k > 0 and tariff.modalidade == "verde"
+            cons = 0
+        end
+
         return {:dem => dem.round(2), :cons => cons.round(5)}
     end
 
     def month_name value
         months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
         months[value - 1].upcase
+    end
+
+    def return_value value
+        value > 0 ? value : "-"
     end
 
 end
