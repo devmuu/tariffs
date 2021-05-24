@@ -7,14 +7,15 @@
   <thead>
     <tr class="bg-dark text-light">
       <th class="text-center">Ano Referência</th>
-      <th>Grupo</th>
-      <th>Subgrupo</th>
-      <th>Modalidade</th>
-      <th>Subclasse</th>
-      <th>Posto</th>
-      <th>TUSD [R$/kW]</th>
-      <th>TUSD [R$/MWh]</th>
-      <th>TE [R$/MWh]</th>
+      <th class="text-center">Grupo</th>
+      <th class="text-center">Subgrupo</th>
+      <th class="text-center">Modalidade</th>
+      <th class="text-center">Subclasse</th>
+      <th class="text-center">Posto</th>
+      <th class="text-center">TUSD [R$/kW]</th>
+      <th class="text-center">TUSD [R$/MWh]</th>
+      <th class="text-center">TE [R$/MWh]</th>
+      <th class="text-center">TUSD+TE [R$/kWh]</th>
     </tr>
   </thead>
 
@@ -28,9 +29,10 @@
         <td class="<%= bg %>"><%= tariff.modalidade.capitalize %></td>
         <td class="text-center"><%= tariff.subclasse.upcase %></td>
         <td class="text-center"><%= tariff.posto %></td>
-        <td class="text-center"><%= tariff.tusd_k %></td>
-        <td class="text-center"><%= tariff.tusd_m %></td>
-        <td class="text-center"><%= tariff.te %></td>
+        <td class="text-center"><%= tariff.tusd_k > 0 ? tariff.tusd_k : "-"%></td>
+        <td class="text-center"><%= return_value tariff.tusd_m %></td>
+        <td class="text-center"><%= return_value tariff.te %></td>
+        <td class="text-center"><%= return_value ((tariff.tusd_m+tariff.te)/1000).round(5) %></td>
       </tr>
     <% end %>
   </tbody>

@@ -7,14 +7,14 @@
 <table id="dataTable" class="table table-hover bg-light mt-3 mb-5">
   <thead>
     <tr class="bg-dark text-light">
-      <th>Ano</th>
-      <th>Grupo</th>
+      <th class="text-center">Ano</th>
+      <th class="text-center">Grupo</th>
       <th>Modalidade</th>
       <th>Mês</th>
-      <th>Acréscimo [R$]</th>
-      <th>PIS [%]</th>
-      <th>ICMS [%]</th>
-      <th>Posto</th>
+      <th class="text-center">Acréscimo [R$]</th>
+      <th class="text-center">PIS [%]</th>
+      <th class="text-center">ICMS [%]</th>
+      <th class="text-center">Posto</th>
       <th class="text-center">Demanda [R$/kW]</th>
       <th class="text-center">Consumo [R$/kWh]</th>
     </tr>
@@ -30,24 +30,16 @@
           <% cons = final_value(tariff,rate,flag)[:cons] %>
           <% flag_var = (tariff.modalidade == "verde" and tariff.posto == "NA" ) %>
           <tr>
-            <td><%= rate.ano.year %></td>
-            <td><%= tariff.grupo %></td>
+            <td class="text-center"><%= rate.ano.year %></td>
+            <td class="text-center"><%= tariff.grupo %></td>
             <td class="<%= bg %>"><%= tariff.modalidade.upcase %></td>
             <td><%= month_name rate.mes %></td>
-            <td><%= flag %></td>
-            <td><%= rate.pis %></td>
-            <td><%= rate.icms %></td>
-            <td><%= tariff.posto %></td>
-            <% if dem == 0.00 %>
-              <td class="text-center">-</td>
-            <% else %>
-              <td class="text-center"><%= dem %></td>
-            <% end %>
-            <% if cons == 0.00 or flag_var %>
-              <td class="text-center">-</td>
-            <% else %>
-              <td class="text-center"><%= cons %></td>
-            <% end %>
+            <td class="text-center"><%= flag %></td>
+            <td class="text-center"><%= rate.pis %></td>
+            <td class="text-center"><%= rate.icms %></td>
+            <td class="text-center"><%= tariff.posto %></td>
+            <td class="text-center"><%= return_value dem %></td>
+            <td class="text-center"><%= return_value cons %></td>
           </tr>
         <% end %>
       <% end %>
