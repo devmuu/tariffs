@@ -9,9 +9,6 @@ gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 # Postgres in prod
 gem 'pg'
 
-# Some data values
-gem 'faker'
-
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -49,6 +46,8 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  # Some data values
+  gem 'faker'
 end
 
 group :test do
