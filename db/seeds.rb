@@ -263,7 +263,7 @@ tariffs = Tariff.create([
         "tusd_m": 884.41,
         "te": 395.99
     },
-    {   
+    {
         "ano": DateTime.new(2021),
         "grupo": "B",
         "subgrupo": 4,
@@ -299,157 +299,166 @@ tariffs = Tariff.create([
 ])
 
 rates = Rate.create([
-			{
-                "ano": DateTime.new(2020),
-				"mes": 1,
-				"ref": DateTime.new(2019),
-				"bandeira": "amarela",
-				"pis": 2.19,
-				"icms": 27,
-				"calc": 1
-			},
-			{
-                "ano": DateTime.new(2020),
-				"mes": 2,
-				"ref": DateTime.new(2019),
-				"bandeira": "verde",
-				"pis": 6.73,
-				"icms": 27,
-				"calc": 1
-			},
-			{
-                "ano": DateTime.new(2020),
-				"mes": 3,
-				"ref": DateTime.new(2019),
-				"bandeira": "verde",
-				"pis": 6.46,
-				"icms": 27,
-				"calc": 1
-			},
-			{
-                "ano": DateTime.new(2020),
-				"mes": 4,
-				"ref": DateTime.new(2019),
-				"bandeira": "verde",
-				"pis": 0,
-				"icms": 27,
-				"calc": 1
-			},
-			{
-                "ano": DateTime.new(2020),
-				"mes": 5,
-				"ref": DateTime.new(2019),
-				"bandeira": "verde",
-				"pis": 4.30,
-				"icms": 27,
-				"calc": 1
-			},
-			{
-                "ano": DateTime.new(2020),
-				"mes": 6,
-				"ref": DateTime.new(2019),
-				"bandeira": "verde",
-				"pis": 5.51,
-				"icms": 27,
-				"calc": 1
-			},
-			{
-                "ano": DateTime.new(2020),
-				"mes": 7,
-				"ref": DateTime.new(2020),
-				"bandeira": "verde",
-				"pis": 1.93,
-				"icms": 27,
-				"calc": 2
-			},
-			{
-                "ano": DateTime.new(2020),
-				"mes": 8,
-				"ref": DateTime.new(2020),
-				"bandeira": "verde",
-				"pis": 2.90,
-				"icms": 27,
-				"calc": 2
-			},
-			{
-                "ano": DateTime.new(2020),
-				"mes": 9,
-				"ref": DateTime.new(2020),
-				"bandeira": "verde",
-				"pis": 0.82,
-				"icms": 27,
-				"calc": 2
-			},
-			{
-                "ano": DateTime.new(2020),
-				"mes": 10,
-				"ref": DateTime.new(2020),
-				"bandeira": "verde",
-				"pis": 3.84,
-				"icms": 27,
-				"calc": 2
-			},
-			{
-                "ano": DateTime.new(2020),
-				"mes": 11,
-				"ref": DateTime.new(2020),
-				"bandeira": "verde",
-				"pis": 5.67,
-				"icms": 27,
-				"calc": 2
-			},
-			{
-                "ano": DateTime.new(2020),
-				"mes": 12,
-				"ref": DateTime.new(2020),
-				"bandeira": "verde",
-				"pis": 2.55,
-				"icms": 27,
-				"calc": 1
-			},
-			{
-                "ano": DateTime.new(2021),
-				"mes": 1,
-				"ref": DateTime.new(2020),
-				"bandeira": "amarela",
-				"pis": 3.67,
-				"icms": 27,
-				"calc": 3
-			},
-			{
-                "ano": DateTime.new(2021),
-				"mes": 2,
-				"ref": DateTime.new(2020),
-				"bandeira": "amarela",
-				"pis": 4.46,
-				"icms": 27,
-				"calc": 3
-			},
-			{
-                "ano": DateTime.new(2021),
-				"mes": 3,
-				"ref": DateTime.new(2020),
-				"bandeira": "amarela",
-				"pis": 2.23,
-				"icms": 27,
-				"calc": 3
-			},
-			{
-                "ano": DateTime.new(2021),
-				"mes": 4,
-				"ref": DateTime.new(2021),
-				"bandeira": "amarela",
-				"pis": 5.54,
-				"icms": 27,
-				"calc": 3
-			},
-			{
-                "ano": DateTime.new(2021),
-				"mes": 5,
-				"ref": DateTime.new(2021),
-				"bandeira": "vermelha p1",
-				"pis": 5.98,
-				"icms": 27,
-				"calc": 3
-			}
-		])
+      {
+        "ano": DateTime.new(2020),
+        "mes": 1,
+        "ref": DateTime.new(2019),
+        "bandeira": "amarela",
+        "pis": 2.19,
+        "icms": 27,
+        "calc": 1
+      },
+      {
+        "ano": DateTime.new(2020),
+        "mes": 2,
+        "ref": DateTime.new(2019),
+        "bandeira": "verde",
+        "pis": 6.73,
+        "icms": 27,
+        "calc": 1
+      },
+      {
+        "ano": DateTime.new(2020),
+        "mes": 3,
+        "ref": DateTime.new(2019),
+        "bandeira": "verde",
+        "pis": 6.46,
+        "icms": 27,
+        "calc": 1
+      },
+      {
+        "ano": DateTime.new(2020),
+        "mes": 4,
+        "ref": DateTime.new(2019),
+        "bandeira": "verde",
+        "pis": 0,
+        "icms": 27,
+        "calc": 1
+      },
+      {
+        "ano": DateTime.new(2020),
+        "mes": 5,
+        "ref": DateTime.new(2019),
+        "bandeira": "verde",
+        "pis": 4.30,
+        "icms": 27,
+        "calc": 1
+      },
+      {
+        "ano": DateTime.new(2020),
+        "mes": 6,
+        "ref": DateTime.new(2019),
+        "bandeira": "verde",
+        "pis": 5.51,
+        "icms": 27,
+        "calc": 1
+      },
+      {
+        "ano": DateTime.new(2020),
+        "mes": 7,
+        "ref": DateTime.new(2020),
+        "bandeira": "verde",
+        "pis": 1.93,
+        "icms": 27,
+        "calc": 2
+      },
+      {
+        "ano": DateTime.new(2020),
+        "mes": 8,
+        "ref": DateTime.new(2020),
+        "bandeira": "verde",
+        "pis": 2.90,
+        "icms": 27,
+        "calc": 2
+      },
+      {
+        "ano": DateTime.new(2020),
+        "mes": 9,
+        "ref": DateTime.new(2020),
+        "bandeira": "verde",
+        "pis": 0.82,
+        "icms": 27,
+        "calc": 2
+      },
+      {
+        "ano": DateTime.new(2020),
+        "mes": 10,
+        "ref": DateTime.new(2020),
+        "bandeira": "verde",
+        "pis": 3.84,
+        "icms": 27,
+        "calc": 2
+      },
+      {
+        "ano": DateTime.new(2020),
+        "mes": 11,
+        "ref": DateTime.new(2020),
+        "bandeira": "verde",
+        "pis": 5.67,
+        "icms": 27,
+        "calc": 2
+      },
+      {
+        "ano": DateTime.new(2020),
+        "mes": 12,
+        "ref": DateTime.new(2020),
+        "bandeira": "verde",
+        "pis": 2.55,
+        "icms": 27,
+        "calc": 1
+      },
+      {
+        "ano": DateTime.new(2021),
+        "mes": 1,
+        "ref": DateTime.new(2020),
+        "bandeira": "amarela",
+        "pis": 3.67,
+        "icms": 27,
+        "calc": 3
+      },
+      {
+        "ano": DateTime.new(2021),
+        "mes": 2,
+        "ref": DateTime.new(2020),
+        "bandeira": "amarela",
+        "pis": 4.46,
+        "icms": 27,
+        "calc": 3
+      },
+      {
+        "ano": DateTime.new(2021),
+        "mes": 3,
+        "ref": DateTime.new(2020),
+        "bandeira": "amarela",
+        "pis": 2.23,
+        "icms": 27,
+        "calc": 3
+      },
+      {
+        "ano": DateTime.new(2021),
+        "mes": 4,
+        "ref": DateTime.new(2021),
+        "bandeira": "amarela",
+        "pis": 5.54,
+        "icms": 27,
+        "calc": 3
+      },
+      {
+        "ano": DateTime.new(2021),
+        "mes": 5,
+        "ref": DateTime.new(2021),
+        "bandeira": "vermelha p1",
+        "pis": 5.98,
+        "icms": 27,
+        "calc": 3
+      },
+      {
+        "ano": DateTime.new(2021),
+        "mes": 6,
+        "ref": DateTime.new(2021),
+        "bandeira": "vermelha p2",
+        "pis": 0.00,
+        "icms": 27,
+        "calc": 3
+      }
+    ])
