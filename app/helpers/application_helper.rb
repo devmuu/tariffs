@@ -12,7 +12,7 @@ module ApplicationHelper
             fix = (1+rate.pis/100+rate.icms/100)
             dem = aux*fix
             cons = num*fix
-        elsif rate.calc == 3
+        elsif rate.calc == 3 or rate.calc == 4
             fix = (1-rate.pis/100)*(1-rate.icms/100)
             dem = aux/fix
             cons = num/fix

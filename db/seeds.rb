@@ -402,7 +402,7 @@ rates = Rate.create([
         "ano": DateTime.new(2020),
         "mes": 12,
         "ref": DateTime.new(2020),
-        "bandeira": "verde",
+        "bandeira": "vermelha 1",
         "pis": 2.55,
         "icms": 27,
         "calc": 1
