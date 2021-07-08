@@ -11,4 +11,13 @@ class HomeController < ApplicationController
     @rates = Rate.all
   end
 
+  def search
+    @search_year = "#{params[:s_year]}-01-01"
+    @search_month = params[:s_month]
+    @tariffs = Tariff.all
+    @rates = Rate.all
+    @years = Rate.all_years
+    @year_list = @years.map { |list| list.year }
+  end
+
 end

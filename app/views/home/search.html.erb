@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<form class="d-flex">
+  <%= form_with(url: "/pesquisa", method: "get") do |f| %>
+  <div class="row">
+    <div class="field col">
+      <%= f.label :ano, class: "text-white" %>
+      <%= f.select :s_year, @year_list, :selected => params[:s_year], class: "form-select mb-3" %>
+    </div>
+    <div class="field col">
+      <%= f.label :mês, class: "text-white" %>
+      <%= f.select :s_month, (1..12), :selected => params[:s_month], class: "form-select mb-3" %>
+    </div>
+    <div class="field">
+      <button class="btn btn-secondary btn-sm" type="submit">Buscar</button>
+    </div>
+  </div>
+  <% end %>
+</form>
+
+<div class="table-responsive">
+<table id="dataTable" class="table table-hover bg-light mt-3 mb-5">
+  <thead>
+    <tr class="bg-primary text-light">
+      <th class="text-center" colspan=3>Mês/Ano: <%= "#{month_name(params[:s_month].to_i)}/#{params[:s_year]}" %> </th>
+      <th class="text-center" colspan=3>Grupo/Subgrupo: A3</th>
+      <th class="text-center" colspan=3>Modalidade: Azul</th>
+    </tr>
+  </thead>
+
+  <thead>
+    <tr class="bg-dark text-light">
+      <th>Modalidade</th>
+      <th class="text-center">Subclasse</th>
+      <th class="text-center">Acréscimo [R$]</th>
+      <th class="text-center">PIS/COFINS [%]</th>
+      <th class="text-center">ICMS [%]</th>
+      <th class="text-center">Posto</th>
+      <th class="text-center">Demanda [R$/kW]</th>
+      <th class="text-center">Consumo [R$/kWh]</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if @search_year %>
+      <% @rates.each do |rate| %>
+        <% if rate.ano == @search_year.to_date and rate.mes == @search_month.to_i %>
+          <% @tariffs.each do |tariff| %>
+            <% if rate.ref == tariff.ano and tariff.grupo == "A" and tariff.subgrupo == 3 and tariff.modalidade == "azul" %>
+              <% bg = mod_color(tariff) %>
+              <% flag = flag_value(rate)[:flag] %>
+              <% dem = final_value(tariff,rate,flag)[:dem] %>
+              <% cons = final_value(tariff,rate,flag)[:cons] %>
+              <% flag_var = (tariff.modalidade == "verde" and tariff.posto == "NA" ) %>
+              <tr>
+                <td class="<%= bg %>"><%= tariff.modalidade.upcase %></td>
+                <td class="text-center"><%= tariff.subclasse.upcase %></td>
+                <td class="text-center"><%= flag %></td>
+                <td class="text-center"><%= rate.pis %></td>
+                <td class="text-center"><%= rate.icms %></td>
+                <td class="text-center"><%= tariff.posto %></td>
+                <td class="text-center"><%= return_value dem %></td>
+                <td class="text-center"><%= return_value cons %></td>
+              </tr>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
